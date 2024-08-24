@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Banq</title>
+</head>
+<body>
+	<h1>Cadastrar - Coordenador</h1>
+	<input type="text" name="nomeCoordenador" id="nomeCoordenador" placeholder="Digite seu nome completo"><br><br>
+	<input type="date" name="dataNascimento" id="dataNascimento"><br><br>
+	<input type="email" name="emailCoordenador" id="emailCoordenador" placeholder="Digite seu E-mail"><br><br>
+	<input type="email" name="confirmaEmail" id="confirmaEmail" placeholder="Digite novamente seu E-mail"><br><br>
+	<!--Curso-->
+	<input type="password" name="senhaCoordenador" id="senhaCoordenador" placeholder="Digite sua senha"><br><br>
+	<input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Digite novamente sua senha"><br><br>
+	<button type="submit" name="enviar" id="enviar">Enviar</button>
+
+	<script type="module">
+		//importação de módulos por construtores
+		import criarCoordenador from './coordenador.js'
+		import createCheck from './check.js'
+		import createClickListener from './click-listener.js'
+
+		//instanciação de módulo
+		const check = createCheck()
+		const clickListener = createClickListener(document)
+
+		//criar uma função pra capturar formulário
+		const nomeCoordenador = document.getElementById('nomeCoordenador')
+		const dataNascimento = document.getElementById('dataNascimento')
+		const emailCoordenador = document.getElementById('emailCoordenador')
+		const confirmaEmail = document.getElementById('confirmaEmail')
+		const senhaCoordenador = document.getElementById('senhaCoordenador')
+		const confirmaSenha = document.getElementById('confirmaSenha')
+		const enviar = document.getElementById('enviar')
+
+		nomeCoordenador.onblur = function (){
+			const valor_inserido = nomeCoordenador.value
+			console.log(valor_inserido)
+		}
+		dataNascimento.onblur = function (){
+			const valor_inserido = dataNascimento.value
+			console.log(valor_inserido)
+		}
+		emailCoordenador.onblur = function (){
+			const valor_inserido = emailCoordenador.value
+			console.log(valor_inserido)
+		}
+		confirmaEmail.onblur = function (){
+			const valor_inserido = confirmaEmail.value
+			console.log(valor_inserido)
+		}
+		senhaCoordenador.onblur = function (){
+			const valor_inserido = senhaCoordenador.value
+			console.log(valor_inserido)
+		}
+		confirmaSenha.onblur = function (){
+			const valor_inserido = confirmaSenha.value
+			console.log(valor_inserido)
+		}
+		enviar.onclick = function (){
+			//mostra a função inserida como atributo para o objeto
+			clickListener.subscribe()
+
+			console.log('tentou enviar')
+		}
+
+	</script>
+
+</body>
+</html>
